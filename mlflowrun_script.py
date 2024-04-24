@@ -103,29 +103,3 @@ with mlflow.start_run(
 
         
         
-    
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-with mlflow.start_run(experiment_id=exp.experiment_id):
-    rfr = RandomForestRegressor(**rfr_params)
-    rfr.fit(train_data_model, y)
-    y_pred = rfr.predict(test_data_model)
-    rfr_mape = mean_absolute_percentage_error(y_test, y_pred)
-    
-    mlflow.log_params(rfr_params)  
-    
-    mlflow.log_metric("MAPE SCORE", rfr_mape)
-    
-    mlflow.sklearn.log_model(rfr, "ML Models")
