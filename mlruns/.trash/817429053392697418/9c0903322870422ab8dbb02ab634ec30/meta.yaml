@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/ayan.sardar/mlflow-tracking-assignment32/mlruns/817429053392697418/9c0903322870422ab8dbb02ab634ec30/artifacts
+deleted_time: 1713956066030
+end_time: 1713955818252
+entry_point_name: ''
+experiment_id: '817429053392697418'
+lifecycle_stage: deleted
+run_id: 9c0903322870422ab8dbb02ab634ec30
+run_name: DATA-PREPROCESSING
+run_uuid: 9c0903322870422ab8dbb02ab634ec30
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713955818039
+status: 4
+tags: []
+user_id: ayan.sardar

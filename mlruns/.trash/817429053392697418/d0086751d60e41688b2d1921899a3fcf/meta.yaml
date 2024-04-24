@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/ayan.sardar/mlflow-tracking-assignment32/mlruns/817429053392697418/d0086751d60e41688b2d1921899a3fcf/artifacts
+deleted_time: 1713956066030
+end_time: 1713955818023
+entry_point_name: ''
+experiment_id: '817429053392697418'
+lifecycle_stage: deleted
+run_id: d0086751d60e41688b2d1921899a3fcf
+run_name: INGESTING-DATA
+run_uuid: d0086751d60e41688b2d1921899a3fcf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713955817260
+status: 3
+tags: []
+user_id: ayan.sardar

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/ayan.sardar/mlflow-tracking-assignment32/mlruns/667586523100677799/a739c10a4901487db2882ca8d1edd675/artifacts
+end_time: 1713956353150
+entry_point_name: ''
+experiment_id: '667586523100677799'
+lifecycle_stage: active
+run_id: a739c10a4901487db2882ca8d1edd675
+run_name: MAIN-RUN
+run_uuid: a739c10a4901487db2882ca8d1edd675
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713956337394
+status: 3
+tags: []
+user_id: ayan.sardar

@@ -36,7 +36,7 @@ def encode_ocean_proximity(x):
         else:
             pass
 
-experiment_id = mlflow.create_experiment("mlflow-housing-regression")
+experiment_id = mlflow.create_experiment("mlflow-housing-regression9")
 with mlflow.start_run(
     run_name="MAIN-RUN",
     experiment_id=experiment_id,
@@ -50,8 +50,16 @@ with mlflow.start_run(
         description="child",
         nested=True,
     ) as child_run:
-        housing = load_housing_data
-        mlflow.log_artifact(housing, artifact_path="datasets")
+        fetch_housing_data()
+        housing = load_housing_data()
+        
+        housing_path = "datasets/housing.csv"
+        housing.to_csv(housing_path, index=False)
+
+        
+        mlflow.log_artifact(housing_path, artifact_path="datasets")
+        print('OK')
+
 
     with mlflow.start_run(
         run_name="DATA-PREPROCESSING",
@@ -68,7 +76,7 @@ with mlflow.start_run(
         std= std()
         std.fit(X)
         train_data_model = std.transform(X)
-
+       
         test_data.dropna(inplace=True)
         test_data['ocean_proximity_encoded']=test_data['ocean_proximity'].apply(lambda x:encode_ocean_proximity(x) )
         y_test = test_data['median_house_value']
@@ -76,10 +84,7 @@ with mlflow.start_run(
 
         std.fit(test_data)
         test_data_model = std.transform(test_data)
-
-
-        mlflow.log_artifact(train_data_model, artifact_path="train-data-model")
-        mlflow.log_artifact(test_data_model, artifact_path="test-data-model")
+        
 
     with mlflow.start_run(
         run_name="MODEL-BUILDING/SCORING",
@@ -88,8 +93,6 @@ with mlflow.start_run(
         nested=True,
     ) as child_run:
         rfr_params = {'n_estimators': 500, 'max_depth': 8, 'max_features': 'sqrt'}
-        exp = mlflow.set_experiment(experiment_name='Assign32_mlflow')
-
         rfr = RandomForestRegressor(**rfr_params)
         rfr.fit(train_data_model, y)
         y_pred = rfr.predict(test_data_model)
