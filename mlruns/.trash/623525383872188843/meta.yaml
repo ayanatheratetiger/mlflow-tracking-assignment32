@@ -1,7 +1,0 @@
-artifact_location: file:///C:/Users/ayan.sardar/mlflow-tracking-assignment32/mlruns/623525383872188843
-creation_time: 1713954803374
-experiment_id: '623525383872188843'
-last_update_time: 1713956079646
-lifecycle_stage: deleted
-name: mlflow-housing-regression4
-tags: {}
